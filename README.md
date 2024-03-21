@@ -90,7 +90,3 @@ $ make help
 $ make build
 $ ./bin/echoserver
 ```
-
-## Projects build with cookiecutter-golang
-
-- [iothub](https://github.com/lacion/iothub) websocket multiroom server for IoT
