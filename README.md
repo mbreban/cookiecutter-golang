@@ -30,7 +30,7 @@ This project now uses docker multistage builds, you need at least docker version
 
 This template uses docker multistage builds to make images slimmer and containers only the final project binary and assets with no source code whatsoever.
 
-You can find the image dokcer file in this [repo](https://github.com/lacion/alpine-golang-buildimage) and more information about docker multistage builds in this [blog post](https://www.critiqus.com/post/multi-stage-docker-builds/).
+You can find the image dokcer file in this [repo](https://github.com/mbreban/alpine-golang-buildimage) and more information about docker multistage builds in this [blog post](https://www.critiqus.com/post/multi-stage-docker-builds/).
 
 Apps run under non root user and also with [dumb-init](https://github.com/Yelp/dumb-init).
 
@@ -52,17 +52,17 @@ $ brew install cookiecutter
 
 Finally, to run it based on this template, type:
 ```console
-$ cookiecutter https://github.com/lacion/cookiecutter-golang.git
+$ cookiecutter https://github.com/mbreban/cookiecutter-golang.git
 ```
 
 You will be asked about your basic info (name, project name, app name, etc.). This info will be used to customize your new project.
 
-Warning: After this point, change 'Luis Morales', 'lacion', etc to your own information.
+Warning: After this point, change 'Luis Morales', 'mbreban', etc to your own information.
 
 Answer the prompts with your own desired [options](). For example:
 ```console
 full_name [Luis Morales]: Luis Morales
-github_username [lacion]: lacion
+github_username [mbreban]: mbreban
 app_name [mygolangproject]: echoserver
 project_short_description [A Golang project.]: Awesome Echo Server
 docker_hub_username [lacion]: lacion
