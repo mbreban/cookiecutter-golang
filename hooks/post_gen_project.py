@@ -30,8 +30,9 @@ def init_git():
     """
     GIT_COMMANDS = [
         ["git", "init"],
+        ["git", "commit", "--allow-empty", "-m", "Initial empty commit"],
         ["git", "add", "."],
-        ["git", "commit", "-a", "-m", "Initial Commit."],
+        ["git", "commit", "-a", "-m", "Initial commit"],
     ]
 
     for command in GIT_COMMANDS:
