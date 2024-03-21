@@ -78,6 +78,14 @@ def remove_circleci_files():
     shutil.rmtree(os.path.join(PROJECT_DIRECTORY, ".circleci"))
 
 
+def go_fmt():
+    """
+    Runs go fmt
+    """
+    go = Popen(["go", "fmt", "-n", "-x", "./..."], cwd=PROJECT_DIRECTORY)
+    go.wait()
+
+
 # 1. Remove Dockerfiles if docker is not going to be used
 if "{{ cookiecutter.use_docker }}".lower() != "y":
     remove_docker_files()
@@ -102,6 +110,8 @@ elif "{{ cookiecutter.use_ci}}".lower() == "circle":
 else:
     remove_file(".travis.yml")
     remove_circleci_files()
+
+go_fmt()
 
 # 6. Initialize Git (should be run after all file have been modified or deleted)
 if "{{ cookiecutter.use_git }}".lower() == "y":
