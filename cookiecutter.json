@@ -7,7 +7,6 @@
     "docker_image": "lacion/alpine-base-image:latest",
     "docker_build_image": "lacion/alpine-golang-buildimage",
     "docker_build_image_version": ["1.13", "1.12.9", "1.11.9"],
-    "go_mod_or_dep": ["mod", "dep"],
     "use_docker": "y",
     "use_git": "y",
     "use_logrus_logging": "y",
