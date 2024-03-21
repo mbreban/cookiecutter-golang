@@ -2,9 +2,10 @@ package log
 
 import (
 	"os"
-
+{% if cookiecutter.use_viper_config == "y" %}
+	"github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}/config"
+{%- endif %}
 	"github.com/sirupsen/logrus"
-	{% if cookiecutter.use_viper_config == "y" %}"github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}/config"{% endif %}
 )
 
 // Logger defines a set of methods for writing application logs. Derived from and
@@ -42,25 +43,25 @@ func init() {
 	defaultLogger = newLogrusLogger(config.Config())
 }
 
-{% if cookiecutter.use_viper_config == "y" %}
+{% if cookiecutter.use_viper_config == "y" -%}
 // NewLogger returns a configured logrus instance
 func NewLogger(cfg config.Provider) *logrus.Logger {
 	return newLogrusLogger(cfg)
 }
-{% else %}
+{%- else %}
 // NewLogger returns logrus instance
 func NewLogger() *logrus.Logger {
 	return newLogrusLogger()
 }
-{% endif %}
+{%- endif %}
 
-{% if cookiecutter.use_viper_config == "y" %}
+{% if cookiecutter.use_viper_config == "y" -%}
 func newLogrusLogger(cfg config.Provider) *logrus.Logger {
-{% else %}
+{%- else %}
 func newLogrusLogger() *logrus.Logger {
-{% endif %}
+{%- endif %}
 	l := logrus.New()
-	{% if cookiecutter.use_viper_config == "y" %}
+{% if cookiecutter.use_viper_config == "y" %}
 	if cfg.GetBool("json_logs") {
 		l.Formatter = new(logrus.JSONFormatter)
 	}
@@ -76,7 +77,7 @@ func newLogrusLogger() *logrus.Logger {
 	default:
 		l.Level = logrus.DebugLevel
 	}
-	{% endif %}
+{% endif %}
 	return l
 }
 
