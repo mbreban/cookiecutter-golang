@@ -78,6 +78,35 @@ def remove_circleci_files():
     shutil.rmtree(os.path.join(PROJECT_DIRECTORY, ".circleci"))
 
 
+def go_mod(module_path):
+    """
+    Runs go mod commands
+    """
+    GO_COMMANDS = [
+        ["go", "mod", "init", module_path],
+        ["go", "mod", "tidy"],
+        ["go", "mod", "verify"],
+    ]
+
+    for command in GO_COMMANDS:
+        go = Popen(command, cwd=PROJECT_DIRECTORY)
+        go.wait()
+
+
+def go_get():
+    """
+    Runs go get command
+    """
+    GO_COMMANDS = [
+        ["go", "get", "-u", "./..."],
+        ["go", "mod", "tidy"],
+    ]
+
+    for command in GO_COMMANDS:
+        go = Popen(command, cwd=PROJECT_DIRECTORY)
+        go.wait()
+
+
 def go_fmt():
     """
     Runs go fmt
@@ -111,9 +140,14 @@ else:
     remove_file(".travis.yml")
     remove_circleci_files()
 
+# 6. Initialize go module
+if "{{ cookiecutter.go_mod }}".lower() == "y":
+    go_mod("{{ cookiecutter.__module_path }}")
+    go_get()
+
 go_fmt()
 
-# 6. Initialize Git (should be run after all file have been modified or deleted)
+# 7. Initialize Git (should be run after all file have been modified or deleted)
 if "{{ cookiecutter.use_git }}".lower() == "y":
     init_git()
 else:

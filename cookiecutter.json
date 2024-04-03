@@ -2,6 +2,7 @@
     "full_name": "Luis Morales",
     "github_username": "mbreban",
     "app_name": "mygolangproject",
+    "__module_path": "github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name|lower}}",
     "project_short_description": "A Golang project.",
     "docker_hub_username": "lacion",
     "docker_image": "lacion/alpine-base-image:latest",
@@ -12,5 +13,6 @@
     "use_logrus_logging": "y",
     "use_viper_config": "y",
     "use_cobra_cmd": "y",
-    "use_ci": ["travis", "circle", "none"]
+    "use_ci": ["travis", "circle", "none"],
+    "go_mod": "y"
 }
