@@ -1,11 +1,6 @@
 # Build Stage
 FROM {{cookiecutter.docker_build_image}}:{{cookiecutter.docker_build_image_version}} AS build-stage
 
-LABEL app="build-{{cookiecutter.app_name}}"
-LABEL REPO="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}"
-
-ENV PROJPATH=/go/src/github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}
-
 # Because of https://github.com/docker/docker/issues/14914
 ENV PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
