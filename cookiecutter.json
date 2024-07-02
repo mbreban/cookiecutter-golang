@@ -5,7 +5,6 @@
     "__module_path": "github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name|lower}}",
     "project_short_description": "A Golang project.",
     "golang_version": ["1.21", "1.22"],
-    "docker_hub_username": "lacion",
     "docker_image": "lacion/alpine-base-image:latest",
     "docker_build_image": "lacion/alpine-golang-buildimage",
     "docker_build_image_version": ["1.13", "1.12.9", "1.11.9"],
