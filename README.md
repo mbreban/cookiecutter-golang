@@ -70,32 +70,27 @@ to customize your new project.
 Answer the prompts with your own desired [options](). For example:
 
 ```sh
-  [1/15] full_name (Luis Morales): 
-  [2/15] github_username (mbreban): 
-  [3/15] app_name (mygolangproject): echoserver
-  [4/15] project_short_description (A Golang project.): Awesome Echo Server
-  [5/15] Select golang_version
+  [1/14] full_name (Luis Morales): 
+  [2/14] github_username (mbreban): 
+  [3/14] app_name (mygolangproject): echoserver
+  [4/14] project_short_description (A Golang project.): Awesome Echo Server
+  [5/14] Select golang_version
     1 - 1.21
     2 - 1.22
     Choose from [1/2] (1): 
-  [6/15] docker_image (lacion/alpine-base-image:latest): 
-  [7/15] docker_build_image (lacion/alpine-golang-buildimage): 
-  [8/15] Select docker_build_image_version
-    1 - 1.13
-    2 - 1.12.9
-    3 - 1.11.9
-    Choose from [1/2/3] (1): 
-  [9/15] use_docker (y): 
-  [10/15] use_git (y): 
-  [11/15] use_logrus_logging (y): 
-  [12/15] use_viper_config (y): 
-  [13/15] use_cobra_cmd (y): 
-  [14/15] Select use_ci
+  [6/14] docker_image (lacion/alpine-base-image:latest): 
+  [7/14] docker_build_image (golang:1.21-alpine): 
+  [8/14] use_docker (y): 
+  [9/14] use_git (y): 
+  [10/14] use_logrus_logging (y): 
+  [11/14] use_viper_config (y): 
+  [12/14] use_cobra_cmd (y): 
+  [13/14] Select use_ci
     1 - travis
     2 - circle
     3 - none
     Choose from [1/2/3] (1): 
-  [15/15] go_mod (y): 
+  [14/14] go_mod (y): 
 ```
 
 Enter the project and take a look around:

@@ -1,11 +1,15 @@
 # Build Stage
-FROM {{cookiecutter.docker_build_image}}:{{cookiecutter.docker_build_image_version}} AS build-stage
+FROM {{cookiecutter.docker_build_image}} AS build-stage
 
 # Because of https://github.com/docker/docker/issues/14914
 ENV PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 ADD . /go/src/github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}
 WORKDIR /go/src/github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}
+
+RUN apk add --no-cache \
+    build-base \
+    git
 
 RUN make build-alpine
 
