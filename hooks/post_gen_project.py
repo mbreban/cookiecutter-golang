@@ -78,12 +78,13 @@ def remove_circleci_files():
     shutil.rmtree(os.path.join(PROJECT_DIRECTORY, ".circleci"))
 
 
-def go_mod(module_path):
+def go_mod(module_path, go_version):
     """
     Runs go mod commands
     """
     GO_COMMANDS = [
         ["go", "mod", "init", module_path],
+        ["go", "mod", "edit", "-go", go_version],
         ["go", "mod", "tidy"],
         ["go", "mod", "verify"],
     ]
@@ -142,7 +143,7 @@ else:
 
 # 6. Initialize go module
 if "{{ cookiecutter.go_mod }}".lower() == "y":
-    go_mod("{{ cookiecutter.__module_path }}")
+    go_mod("{{ cookiecutter.__module_path }}", "{{ cookiecutter.golang_version }}")
     go_get()
 
 go_fmt()
