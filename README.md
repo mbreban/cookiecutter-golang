@@ -70,7 +70,7 @@ to customize your new project.
 Answer the prompts with your own desired [options](). For example:
 
 ```sh
-  [1/14] full_name (Luis Morales): 
+  [1/14] full_name (Mathieu Bréban): 
   [2/14] github_username (mbreban): 
   [3/14] app_name (mygolangproject): echoserver
   [4/14] project_short_description (A Golang project.): Awesome Echo Server

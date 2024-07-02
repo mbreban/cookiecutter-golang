@@ -1,5 +1,5 @@
 {
-    "full_name": "Luis Morales",
+    "full_name": "Mathieu Bréban",
     "github_username": "mbreban",
     "app_name": "mygolangproject",
     "__module_path": "github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name|lower}}",
