@@ -78,8 +78,8 @@ Answer the prompts with your own desired [options](). For example:
     1 - 1.21
     2 - 1.22
     Choose from [1/2] (1): 
-  [6/14] docker_image (lacion/alpine-base-image:latest): 
-  [7/14] docker_build_image (golang:1.21-alpine): 
+  [6/14] docker_build_image (golang:1.21-alpine): 
+  [7/14] docker_image (alpine:latest): 
   [8/14] use_docker (y): 
   [9/14] use_git (y): 
   [10/14] use_logrus_logging (y): 

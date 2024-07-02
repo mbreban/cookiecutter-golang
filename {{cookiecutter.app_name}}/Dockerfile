@@ -22,6 +22,9 @@ LABEL REPO="https://{{cookiecutter.__module_path}}"
 LABEL GIT_COMMIT=$GIT_COMMIT
 LABEL VERSION=$VERSION
 
+RUN apk add --no-cache --update \
+    dumb-init
+
 # Because of https://github.com/docker/docker/issues/14914
 ENV PATH=$PATH:/opt/{{cookiecutter.app_name}}/bin
 
