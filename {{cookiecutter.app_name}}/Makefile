@@ -7,7 +7,7 @@ GIT_DIRTY := $(shell test -n "`git status --porcelain`" && echo "+CHANGES" || tr
 BUILD_DATE := $(shell date '+%Y-%m-%d-%H:%M:%S')
 IMAGE_NAME := {{cookiecutter.app_name}}
 
-.PHONY: test
+.PHONY: default
 default: test
 
 .PHONY: help
